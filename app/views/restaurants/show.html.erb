@@ -1,0 +1,13 @@
+<h1>Restaurants#show</h1>
+<p>Find me in app/views/restaurants/show.html.erb</p>
+
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.description %></p>
+<p><%= @restaurant.address %></p>
+
+<h2>Faire une réservation</h2>
+<%= form_with(model: [@restaurant, @reservation]) do |form| %>
+  <%= form.label :reservation_date %>
+  <%= form.datetime_local_field :reservation_date %>
+  <%= form.submit "Réserver" %>
+<% end %>
